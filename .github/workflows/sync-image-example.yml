@@ -33,11 +33,5 @@ jobs:
     # 使用shell命令批量同步所需的镜像到dockerHub中
     - name: Use Skopeo Tools Sync Image to Docker Hub
       run: |
-        #!/usr/bin/env bash
-        skopeo copy --all docker://registry.k8s.io/kube-apiserver:v1.27.4 docker://docker.io/weiyigeek/kube-apiserver:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/kube-controller-manager:v1.27.4 docker://docker.io/weiyigeek/kube-controller-manager:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/kube-scheduler:v1.27.4 docker://docker.io/weiyigeek/kube-scheduler:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/kube-proxy:v1.27.4 docker://docker.io/weiyigeek/kube-proxy:v1.27.4
-        skopeo copy --all docker://registry.k8s.io/pause:3.9 docker://docker.io/weiyigeek/pause:3.9
-        skopeo copy --all docker://registry.k8s.io/etcd:3.5.7-0 docker://docker.io/weiyigeek/etcd:3.5.7-0
-        skopeo copy --all docker://registry.k8s.io/coredns/coredns:v1.10.1 docker://docker.io/weiyigeek/coredns:v1.10.1
+         skopeo copy docker://docker.io/hslr/sun-panel:1.4.0 docker://registry.cn-hangzhou.aliyuncs.com/weiyigeek/sun-panel:1.4.0
+      # 使用 skopeo 工具将镜像同步到阿里云个人仓库中，使用时请自行源和目标修改仓库名称和镜像名称 作者：全栈工程师修炼指南
